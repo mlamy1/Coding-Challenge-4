@@ -20,3 +20,21 @@ function displayProductDetails(inventory) {
 console.log(displayProductDetails(inventory[0])); // Used to display which product is in stock. 
  console.log(inventory[0]); // Used to display the product's: name, price, quanity, and lowstocklevel.
 
+// Task 3: Create a Function to Update Product Stock After Sales
+
+const unitsSold = [52, 100, 64, 88, 92]; // Example value used for function
+function updateStock(product, unitsSold) {
+    product.quantity -= unitsSold; // Calculates quantity after unitsSold
+
+    let status; 
+    if(product.quantity <= 0) {
+        status = `${product.name} is out of stock`; // Message will display if quantity is less zero.
+    } else if ( product.quantity <= product.lowStockLevel){
+        status = `${product.name} is low on stock`; // Message will display if quantity is greater than zero. 
+    } else {
+        status = `${product.name} stock is sufficient. Current Quantity: ${product.quantity}`; // Message will display output is different than first two options. 
+    }
+    return status;
+}
+const message = updateStock(inventory[0],2); // Used to find new current quantity.  
+console.log(message); // Used to display message 
