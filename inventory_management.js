@@ -1,6 +1,6 @@
 // Task 1: Create an Inventory Array of Product Objects
 
-let inventory = [
+const inventory = [
     {name: 'Camera Strap', price: 500, quantity: 5, lowStockLevel: 2 },
     {name: 'Camera Lens', price: 1000, quantity: 10, lowStockLevel: 4 },
     {name: 'Camera Bag', price: 1500, quantity: 15, lowStockLevel: 6 },
@@ -38,3 +38,15 @@ function updateStock(product, unitsSold) {
 }
 const message = updateStock(inventory[0],2); // Used to find new current quantity.  
 console.log(message); // Used to display message 
+
+// Task 4: Create a Function to Check Low Stock Products 
+
+function checkLowStock(inventory) {
+    for (let i = 0; i < inventory.length; i++) { // For loop used to iterate through the inventory array. 
+        if (inventory.quantity <= inventory.lowStockLevel) // Calculation to determine if product quantity is less than the stock level. 
+            return `${inventory.name} has a low stock level.`; { // Message will display if calculation is true. 
+    }}
+    return `All stock levels are sufficient`; // Message will display if calculation is false. 
+}
+console.log(checkLowStock(inventory)); // Function to display message. 
+
