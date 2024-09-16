@@ -50,3 +50,14 @@ function checkLowStock(inventory) {
 }
 console.log(checkLowStock(inventory)); // Function to display message. 
 
+//Task 5: Create a Function to Calculate Total Inventory Value
+
+function calculateInventoryValue(inventory) {
+   return inventory.reduce ((total, inventory) => {
+       return total + (inventory.quantity * inventory.price)},0)}; // Used to calculate value of the product. 
+
+
+let totalInventoryValue = calculateInventoryValue(inventory); // Used to create message.
+console.log(`The total inventory value is: $${totalInventoryValue}`); // Will display message and output of previous calculation. 
+
+
