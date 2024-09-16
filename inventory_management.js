@@ -60,4 +60,14 @@ function calculateInventoryValue(inventory) {
 let totalInventoryValue = calculateInventoryValue(inventory); // Used to create message.
 console.log(`The total inventory value is: $${totalInventoryValue}`); // Will display message and output of previous calculation. 
 
+// Task 6: Create a Function to Process a Sale
 
+function processSale(productName,unitsSold) {
+    let results = inventory.find ((product => {inventory.name === product}));
+    if(results) {
+       return updateStock(productName, unitsSold);
+    } else {
+        return (`ERROR: ${productName} is not in the inventory!`); // Message that will be displayed. 
+    }
+}
+console.log(processSale(`Camera Lens`)); // Function will display message for the Example Product. 
